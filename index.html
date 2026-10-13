@@ -19,7 +19,35 @@
     <main class="page-shell">
       <section class="intro" aria-labelledby="page-title">
         <h1 id="page-title">Lost something or found something?</h1>
-        <p class="intro-copy">Share a few details about the item to help it find its way home.</p>
+        <p class="intro-copy">Browse recent reports or share a few details to help an item find its way home.</p>
+      </section>
+
+      <section class="listings" aria-labelledby="listings-heading">
+        <div class="listings-heading">
+          <div>
+            <h2 id="listings-heading">Recent items</h2>
+            <p>Browse lost and found reports from the community.</p>
+          </div>
+          <span class="listing-count" id="listing-count" aria-live="polite"></span>
+        </div>
+        <div class="listing-filters">
+          <label class="visually-hidden" for="listing-search">Search items</label>
+          <input id="listing-search" type="search" placeholder="Search items...">
+          <label class="visually-hidden" for="category-filter">Filter by category</label>
+          <select id="category-filter">
+            <option value="">All categories</option>
+            <option>Accessories</option>
+            <option>Clothing</option>
+            <option>Electronics</option>
+            <option>Keys &amp; cards</option>
+            <option>Bags &amp; luggage</option>
+            <option>Books &amp; stationery</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <p class="listing-message" id="listing-message" role="status" aria-live="polite"></p>
+        <div class="listing-grid" id="listing-grid"></div>
+        <p class="listing-action-feedback" id="listing-action-feedback" role="status" aria-live="polite"></p>
       </section>
 
       <section class="form-card" aria-labelledby="form-heading">
@@ -91,6 +119,13 @@
               <label for="date">Date <span class="required-mark">*</span></label>
               <input id="date" name="date" type="date" required aria-describedby="date-error">
               <p class="field-error" id="date-error"></p>
+            </div>
+
+            <div class="field field-wide">
+              <label for="contact-email">Contact email <span class="required-mark" id="contact-required-mark" hidden>*</span></label>
+              <input id="contact-email" name="contactEmail" type="email" placeholder="you@example.com" autocomplete="email" maxlength="254" aria-describedby="contact-help contact-email-error">
+              <p class="field-help" id="contact-help">Required for found items. This email is shown on your listing in this browser so people can contact you. Optional for lost items.</p>
+              <p class="field-error" id="contact-email-error"></p>
             </div>
           </div>
 
