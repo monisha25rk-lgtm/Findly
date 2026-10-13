@@ -14,14 +14,17 @@
         <span class="brand-mark" aria-hidden="true">f</span>
         <span>foundry</span>
       </a>
-      <span class="topbar-note"><span class="status-dot" aria-hidden="true"></span> Community lost &amp; found</span>
+      <nav class="topbar-nav" aria-label="Main navigation">
+        <a href="#listings">Browse items</a>
+        <a class="nav-report-link" href="#report-form">Report an item <span aria-hidden="true">↗</span></a>
+      </nav>
     </header>
 
     <main class="page-shell">
       <section class="intro" aria-labelledby="page-title">
         <p class="eyebrow"><span>01</span> &nbsp; ITEM REPORT</p>
         <h1 id="page-title">Help good things<br>find their way <em>home.</em></h1>
-        <p class="intro-copy">A few details can make all the difference. Tell us what went missing or what you found, and we’ll help make the connection.</p>
+        <p class="intro-copy">Browse recent community reports or share a few details about something you lost or found. The right connection may be closer than you think.</p>
         <div class="privacy-note">
           <span class="privacy-icon" aria-hidden="true">✳</span>
           <span>Your contact details stay private.<br><strong>Only share what helps identify the item.</strong></span>
@@ -107,7 +110,7 @@
           <div class="form-footer">
             <p class="required-note"><span class="required-mark">*</span> Required fields</p>
             <button class="submit-button" type="submit">
-              <span id="submit-label">Check report details</span>
+              <span id="submit-label">Post item report</span>
               <span class="submit-arrow" aria-hidden="true">→</span>
             </button>
           </div>
@@ -116,9 +119,50 @@
       </section>
     </main>
 
+    <section class="listings-section" id="listings" aria-labelledby="listings-title">
+      <div class="listings-heading">
+        <div>
+          <p class="eyebrow"><span>02</span> &nbsp; COMMUNITY BOARD</p>
+          <h2 id="listings-title">A little closer to found.</h2>
+          <p class="listings-copy">Browse recent lost and found reports from your community.</p>
+        </div>
+        <a class="listings-report-link" href="#report-form">Share an item <span aria-hidden="true">↗</span></a>
+      </div>
+
+      <div class="listing-tools">
+        <label class="search-field" for="listing-search">
+          <span aria-hidden="true">⌕</span>
+          <input id="listing-search" type="search" placeholder="Search items, details, or locations" autocomplete="off">
+        </label>
+        <label class="category-filter-label" for="category-filter">Category</label>
+        <div class="category-filter-wrap">
+          <select id="category-filter" aria-label="Filter listings by category">
+            <option value="all">All categories</option>
+            <option>Accessories</option>
+            <option>Clothing</option>
+            <option>Electronics</option>
+            <option>Keys &amp; cards</option>
+            <option>Bags &amp; luggage</option>
+            <option>Books &amp; stationery</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="listing-tabs" role="group" aria-label="Filter listings by report type">
+        <button class="listing-tab is-active" type="button" data-listing-type="all" aria-pressed="true">All items</button>
+        <button class="listing-tab" type="button" data-listing-type="lost" aria-pressed="false">Lost</button>
+        <button class="listing-tab" type="button" data-listing-type="found" aria-pressed="false">Found</button>
+      </div>
+
+      <p class="listing-count" id="listing-count" aria-live="polite"></p>
+      <div class="listing-grid" id="listing-grid" aria-live="polite"></div>
+      <p class="empty-listings" id="empty-listings" hidden>No items match those filters. Try a different search or category.</p>
+    </section>
+
     <footer class="site-footer">
       <span>FOUND IS A LITTLE CLOSER.</span>
-      <span>Take a breath. We’ll help from here.</span>
+      <span>Items are saved in this browser for this demo.</span>
     </footer>
   </body>
 </html>
