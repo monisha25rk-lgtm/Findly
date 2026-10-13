@@ -1,1 +1,1 @@
-# Findly
+# Foundly
